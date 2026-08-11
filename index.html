@@ -236,44 +236,59 @@
             z-index: 1000;
         }
 
-        .header {
-            min-height: 75px;
-            padding: 12px 20px;
+        /* 1. Expand header padding & height so a large logo fits easily */
+.header {
+    min-height: 90px; /* Increased from 75px to give vertical room */
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Keeps navigation aligned nicely */
+    gap: 25px; /* Brings logo closer to Home */
+    background: rgba(12, 9, 22, 0.66);
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 24px;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.42),
+        inset 0 1px 1px rgba(255,255,255,0.08);
+}
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 15px; /* Sits right before Home */
+}
 
-            background: rgba(12, 9, 22, 0.66);
-            border: 1px solid rgba(255,255,255,0.13);
-            border-radius: 24px;
+/* 2. Increase image size & enhance clarity/contrast */
+.signature {
+    height: 110px; /* Significantly increased height */
+    width: auto;
+    max-height: none;
+    object-fit: contain;
+    margin-top: -10px; /* Centers large height vertically */
+    margin-bottom: -10px;
+    
+    /* Boosts gold color contrast, sharpness, and glow */
+    filter: 
+        brightness(1.25) 
+        contrast(1.2) 
+        drop-shadow(0 0 12px rgba(236, 56, 188, 0.5))
+        drop-shadow(0 0 4px rgba(255, 215, 0, 0.6));
+    
+    transition: transform 0.3s ease;
+}
 
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
+.signature:hover {
+    transform: scale(1.05);
+}
 
-            box-shadow:
-                0 15px 45px rgba(0,0,0,0.42),
-                inset 0 1px 1px rgba(255,255,255,0.08);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .signature {
-            width: 700 px;
-            max-height: 55 px;
-            object-fit: contain;
-            filter:
-                drop-shadow(0 0 8px rgba(236,56,188,0.35));
-        }
-
-        .navbar {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
+/* 3. Reduce spacing between nav items so everything fits comfortably */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Compact gap to leave plenty of room for large logo */
+}
 
         .navbar li a {
             position: relative;
