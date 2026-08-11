@@ -262,11 +262,15 @@
         }
 
         .signature {
-            width: 125px;
-            max-height: 55px;
-            object-fit: contain;
-            filter:
-                drop-shadow(0 0 8px rgba(236,56,188,0.35));
+           width: auto;
+    height: 70px; /* Increased from 55px to make it clearly bigger */
+    max-height: none;
+    object-fit: contain;
+    /* Added contrast and brightness boost to make the gold stand out sharply */
+    filter: 
+        brightness(1.15) 
+        contrast(1.1) 
+        drop-shadow(0 0 10px rgba(236,56,188,0.45));
         }
 
         .navbar {
